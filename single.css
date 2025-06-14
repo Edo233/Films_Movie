@@ -105,7 +105,17 @@ body {
     cursor: pointer;
 }
 
+.video_popup_content{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: row-reverse;
+}
 
+.buttonn{
+    cursor: pointer;
+    padding: 5px;
+}
 
 #video {
     margin-top: 100px;

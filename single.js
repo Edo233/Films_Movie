@@ -87,6 +87,7 @@ function popupp(key, name) {
     popup.style.display = 'flex';
     popup.innerHTML = `
         <div class="video_popup_content" >
+        <button class='buttonn' onclick="closePopup()">X</button>
             <iframe width="560" height="315"
                 src="https://www.youtube.com/embed/${key}"
                 frameborder="0" allowfullscreen>
