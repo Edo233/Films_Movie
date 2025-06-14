@@ -101,6 +101,7 @@ body {
 .video_box {
     margin: 10px;
     text-align: center;
+    cursor: pointer;
 }
 
 
