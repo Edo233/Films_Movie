@@ -2,10 +2,12 @@ let id = location.href.split('=')[1];
 let root = document.getElementById('root');
 let credits = document.getElementById('credits');
 let video = document.getElementById('video');
-let loader = document.querySelector('.loderid')
+let loader = document.querySelector('.loderid') 
+let popup = document.getElementById('popup')
 const API_KEY = "9b702a6b89b0278738dab62417267c49";
 let img_url_original = "https://image.tmdb.org/t/p/original";
 let img_url = "https://image.tmdb.org/t/p/w500";
+let isOpen = false
 
 
 
@@ -66,7 +68,7 @@ function printVideo(videos) {
     videos.forEach(elm => {
         if (elm.site === "YouTube") {
             video.innerHTML += `
-                <div class="video_box">
+                <div class="video_box" onclick='popupp("${elm.key}", "${elm.name}")'>
                     <iframe width="300" height="200" 
                         src="https://www.youtube.com/embed/${elm.key}"
                         frameborder="0" >
@@ -80,6 +82,27 @@ function printVideo(videos) {
 
 }
 
+
+function popupp(key, name) {
+    popup.style.display = 'flex';
+    popup.innerHTML = `
+        <div class="video_popup_content" >
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/${key}"
+                frameborder="0" allowfullscreen>
+            </iframe>
+            <p>${name}</p>
+        </div>
+    `;
+}
+
+
+function closePopup() {
+    popup.addEventListener('click',()=>{
+        popup.style.display='none'
+        popup.innerHTML=''
+    })
+}
 
 
 window.addEventListener('load',()=>{
