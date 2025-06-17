@@ -69,6 +69,7 @@ function printVideo(videos) {
         if (elm.site === "YouTube") {
             video.innerHTML += `
                 <div class="video_box" onclick='popupp("${elm.key}", "${elm.name}")'>
+                <div class='position'></div>
                     <iframe width="300" height="200" 
                         src="https://www.youtube.com/embed/${elm.key}"
                         frameborder="0" >
@@ -87,12 +88,12 @@ function popupp(key, name) {
     popup.style.display = 'flex';
     popup.innerHTML = `
         <div class="video_popup_content" >
-        <button class='buttonn' onclick="closePopup()">X</button>
+        <div class='x'><button class='buttonn' onclick="closePopup()">X</button></div>
             <iframe width="560" height="315"
                 src="https://www.youtube.com/embed/${key}"
                 frameborder="0" allowfullscreen>
             </iframe>
-            <p>${name}</p>
+            <h2>${name}</h2>
         </div>
     `;
 }

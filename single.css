@@ -20,7 +20,6 @@
     justify-content: center;
     align-items: center;
     gap: 40px;
-    /* height: 100vh; */
     background-size: cover;
     padding: 200px 0px;
     position: relative;
@@ -71,11 +70,9 @@ body {
 
 
 #credits {
-    margin-top: 80px;
     width: 100%;
     overflow-x: auto;
     display: flex;
-    /* flex-direction: column; */
     gap: 10px;
     padding: 10px;
     background-color: black;
@@ -103,13 +100,38 @@ body {
     margin: 10px;
     text-align: center;
     cursor: pointer;
+    position: relative;
+}
+
+.position{
+position: absolute;
+top: 0px;
+left: 0;
+width: 100%;
+height: 100%;
 }
 
 .video_popup_content{
     display: flex;
-    justify-content: start;
     align-items: start;
-    flex-direction: row-reverse;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.808);
+    padding: 5px 50px 20px 50px;
+    border-radius: 15px;
+    gap: 20px;
+}
+
+.person{
+    margin-top: 80px;
+    background-color: black;
+
+}
+
+.x{
+    width: 107%;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 20px;
 }
 
 .buttonn{
@@ -138,6 +160,7 @@ body {
 .h22 {
     color: white;
     display: block;
+        padding-left: 30px;
 }
 
 
@@ -149,7 +172,6 @@ body {
 
 
 .loderid{
-    /* position: absolute; */
     position: fixed;
     top: 0px;
     left: 0px;
@@ -162,7 +184,6 @@ body {
 
 
 .loder_flex{
-    /* opacity: 0; */
     display: none;
 
 }
