@@ -115,5 +115,5 @@ function getGenres(id) {
     .then(res => res.json())
     .then(res => printMovies(res.results)
 )
-        
+                    
 }

@@ -48,10 +48,11 @@ function aktiori(arr) {
     arr.forEach((elm) => {
         if (elm.profile_path) {
             credits.innerHTML += `
-                <div class='aktior_cart'>
+             <a href="artist.html?id=${elm.id}">  
+            <div class='aktior_cart'>
                     <img class='credit_img' src='${img_url + elm.profile_path}' alt='${elm.name}' />
                     <p>${elm.name}</p>
-                </div>
+                </div></a>
             `;
         }
     });
