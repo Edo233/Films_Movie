@@ -1,6 +1,8 @@
 let id = location.href.split('=')[1];
 let root = document.getElementById('root');
 let credits = document.getElementById('credits');
+let Coment = document.getElementById('Coment');
+let moviesList = document.getElementById('movies-list');
 let video = document.getElementById('video');
 let loader = document.querySelector('.loderid') 
 let popup = document.getElementById('popup')
@@ -115,3 +117,53 @@ window.addEventListener('load',()=>{
         },4500)
     },4500);
 })
+
+
+fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`)
+  .then(res => res.json())
+  .then(res => ComenTaria(res.cast));
+
+
+
+  function ComenTaria(arr) {
+    arr.forEach((elm)=>{
+        Coment.innerHTML+=`
+        <div class="comentarii">
+                <div class="comentarii_blok1">
+                   <div class="images_div">
+                    <img class="images_div_img" src="${elm.profile_path }" alt="">
+                   </div> 
+                </div>
+                <div class="comentarii_blok2">
+                    <div class="name">
+                        <h3>${elm.name}</h3>
+                    </div>
+                    <div class="com">
+                        <p>${elm.character}</p>
+                    </div>
+                </div>
+            </div>
+        `
+    })
+  }
+
+
+
+  fetch(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=en-US&page=1`)
+  .then(response => response.json())
+  .then(data => showMovies(data.results)) 
+
+function showMovies(movies) {
+  moviesList.innerHTML = ""
+  movies.forEach(movie => {
+    const movieCard = document.createElement("div")
+    movieCard.classList.add("movie-card")
+    movieCard.innerHTML = `
+      <a href="single.html?id=${movie.id}">
+        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}" />
+        <h3>${movie.title}</h3>
+      </a>
+    `
+    moviesList.appendChild(movieCard)
+  })
+}
