@@ -48,7 +48,7 @@ function aktiori(arr) {
     arr.forEach((elm) => {
         if (elm.profile_path) {
             credits.innerHTML += `
-             <a href="artist.html?id=${elm.id}">  
+             <a href="artist.html?id=${elm.credit_id}">  
             <div class='aktior_cart'>
                     <img class='credit_img' src='${img_url + elm.profile_path}' alt='${elm.name}' />
                     <p>${elm.name}</p>
@@ -120,33 +120,39 @@ window.addEventListener('load',()=>{
 })
 
 
-fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`)
+
+
+
+
+fetch(`https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${API_KEY}`)
   .then(res => res.json())
-  .then(res => ComenTaria(res.cast));
+  .then(res => ComenTaria(res.results)) 
 
+function ComenTaria(arr) {
+  arr.forEach((elm) => {
+    const avatar = elm.author_details.avatar_path 
+      ? `https://image.tmdb.org/t/p/w200${elm.author_details.avatar_path}` 
+      : 'https://via.placeholder.com/100';  
+    Coment.innerHTML += `
+      <div class="comentarii">
+        <div class="comentarii_blok1">
+          <div class="images_div">
+            <img class="images_div_img" src="${avatar}" alt="">
+          </div> 
+        </div>
+        <div class="comentarii_blok2">
+          <div class="name">
+            <h3 class='h33'>${elm.author_details.name || elm.author}</h3>
+          </div>
+          <div class="com">
+            <p>${elm.content}</p>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+}
 
-
-  function ComenTaria(arr) {
-    arr.forEach((elm)=>{
-        Coment.innerHTML+=`
-        <div class="comentarii">
-                <div class="comentarii_blok1">
-                   <div class="images_div">
-                    <img class="images_div_img" src="${elm.profile_path }" alt="">
-                   </div> 
-                </div>
-                <div class="comentarii_blok2">
-                    <div class="name">
-                        <h3>${elm.name}</h3>
-                    </div>
-                    <div class="com">
-                        <p>${elm.character}</p>
-                    </div>
-                </div>
-            </div>
-        `
-    })
-  }
 
 
 

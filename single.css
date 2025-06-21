@@ -282,20 +282,16 @@ height: 100%;
     flex-direction: column;
     gap: 20px;
     background-color: black;
-    display: none;
 }
 
 .comentarii{
-    width: 500px;
-    height: 100px;
-    background-color: burlywood;
     display: flex;
+    color: white;
 }
 
 .comentarii_blok1{
     width: 100px;
     height: 100%;
-    background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -305,14 +301,14 @@ height: 100%;
 .images_div{
     width: 70px;
     height: 70px;
-    background-color: aqua;
+    background-color: rgb(44, 44, 44);
     border-radius: 50%;
 }
 
 .comentarii_blok2{
     width: 100%;
     height: 100%;
-    background-color: blue;
+    background-color: rgb(47, 47, 49);
     padding: 10px 10px;
 }
 
@@ -320,6 +316,12 @@ height: 100%;
     width: 100%;
     height: 100%;
     object-fit: cover;
+        border-radius: 50px;
+}
+
+
+.h33{
+    color: rgba(216, 4, 4, 0.801);
 }
 
 #movies-list {
@@ -357,4 +359,111 @@ height: 100%;
     margin-top: 10px;
     color: white;
     font-size: 16px;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  .blachk, .blachk2 {
+    width: 90%;
+    height: auto;
+  }
+
+  .blachk2 {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .logo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie-card {
+    width: 200px;
+  }
+
+  .movie-card h3 {
+    font-size: 14px;
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  #root {
+    flex-direction: column;
+    padding: 100px 0;
+    gap: 20px;
+  }
+
+  .blachk, .blachk2 {
+    width: 95%;
+    height: auto;
+  }
+
+  .credit_img {
+    height: 150px;
+  }
+
+  .video_popup_content {
+    padding: 10px 20px;
+  }
+
+  .movie-card {
+    width: 180px;
+  }
+
+  .movie-card h3 {
+    font-size: 13px;
+  }
+
+  .h22 {
+    font-size: 18px;
+    padding-left: 15px;
+  }
+
+  .comentarii_blok2 {
+    font-size: 14px;
+  }
+}
+
+
+
+@media screen and (max-width: 480px) {
+  .blachk, .blachk2 {
+    width: 98%;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .credit_img {
+    height: 120px;
+  }
+
+  .movie-card {
+    width: 150px;
+  }
+
+  .movie-card h3 {
+    font-size: 12px;
+  }
+
+  .comentarii_blok1 {
+    width: 70px;
+  }
+
+  .images_div {
+    width: 50px;
+    height: 50px;
+  }
+
+  .h22 {
+    font-size: 16px;
+  }
+
+  .video_popup_content {
+    padding: 10px;
+    font-size: 14px;
+  }
 }

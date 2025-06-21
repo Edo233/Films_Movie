@@ -91,7 +91,7 @@ fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`)
     .then(res => {
         res.genres.forEach(elm => {
             categories.innerHTML += `
-            <button onclick="getGenres(${elm.id}) ">
+            <button class='buttonm' onclick="getGenres(${elm.id}) ">
               <span class="text">${elm.name}</span>
             </button>
       `;
