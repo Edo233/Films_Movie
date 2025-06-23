@@ -293,93 +293,66 @@ button:active {
 }
 
 
-
-
-
-
-
-
-
 @media screen and (max-width: 1024px) {
+    [class*=__conteaner] {
+        padding: 20px 40px;
+    }
+
     .movie-cart {
-        width: 210px;
+        width: 200px;
     }
 
     #searchInp {
-        width: 90%;
-        margin-left: 0;
-    }
-
-    .serachh {
+        width: 95%;
         font-size: 16px;
-        padding: 8px 24px;
     }
 
     .scuare_reting {
         width: 60px;
         height: 60px;
+        font-size: 16px;
+    }
+
+    .serachh {
+        font-size: 15px;
     }
 }
 
-
 @media screen and (max-width: 768px) {
-    #root {
-        gap: 30px;
-        padding: 40px 20px;
+    [class*=__conteaner] {
+        padding: 15px 20px;
     }
 
     .movie-cart {
-        width: 170px;
-    }
-
-    .reting h3 {
-        font-size: 14px;
+        width: 160px;
     }
 
     #searchInp {
-        width: 90%;
-        height: 38px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .scuare_reting {
+        width: 50px;
+        height: 50px;
         font-size: 14px;
     }
 
     .serachh {
-        font-size: 14px;
-        padding: 7px 30px;
-    }
-
-    #categories {
-        padding: 10px 20px;
-        gap: 15px;
+        font-size: 13px;
+        padding: 6px 20px;
     }
 
     button {
         font-size: 14px;
-        padding: 2px;
-    }
-
-    .scuare_reting {
-        width: 45px;
-        height: 45px;
+        min-width: 120px;
     }
 }
 
-
+/* For small mobiles */
 @media screen and (max-width: 480px) {
-    #root {
-        padding: 20px 10px;
-    }
-
     .movie-cart {
-        width: 140px;
-    }
-
-    .reting {
-        gap: 20px;
-        padding-bottom: 20px;
-    }
-
-    .reting h3 {
-        font-size: 12px;
+        width: 130px;
     }
 
     .scuare_reting {
@@ -388,26 +361,37 @@ button:active {
         font-size: 12px;
     }
 
-    #searchInp {
-        width: 100%;
-        height: 35px;
+    .reting h3 {
         font-size: 12px;
+        text-align: center;
+    }
+
+    #searchInp {
+        font-size: 12px;
+        height: 35px;
     }
 
     .serachh {
         font-size: 12px;
-        padding: 6px 18px;
+        padding: 5px 15px;
     }
 
     button {
         font-size: 12px;
+        padding: 3px;
         min-width: 100px;
     }
 
-    #categories {
-        padding-left: 10px;
-        padding-right: 10px;
-        gap: 10px;
+    .logoo {
+        font-size: clamp(12px, 4vw, 18px);
     }
 
+    #root {
+        padding: 10px;
+        gap: 20px;
+    }
+
+    #categories {
+        gap: 10px;
+    }
 }

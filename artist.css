@@ -5,6 +5,10 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+body{
+    background-color: black;
+}
+
 #root{
     width: 100%;
     height: 100vh;
@@ -49,3 +53,254 @@
 .taretiv {
     color: rgb(165, 13, 64);
 }
+
+
+.blachk {
+    width: 350px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.621);
+    border-radius: 15px;
+    padding: 23px;
+}
+
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.blachk2 {
+    width: 650px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.621);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    color: white;
+
+}
+
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+
+.span{
+    color: gold;
+}
+
+.span2{
+    color: red;
+}
+
+.span3{
+    color:darkcyan ;
+}
+
+.p{
+    color: rgb(149, 149, 149);
+}
+
+#movies{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    background-color: rgb(17, 17, 17);
+    padding: 20px;
+        overflow-x: auto;
+}
+
+
+
+#loader{
+ width: 2.5em;
+ height: 2.5em;
+ transform: rotate(165deg);
+}
+
+
+.loderid{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 99;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+
+
+.loder_flex{
+    display: none;
+
+}
+
+
+#loader:before, #loader:after {
+ content: "";
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ display: block;
+ width: 0.5em;
+ height: 0.5em;
+ border-radius: 0.25em;
+ transform: translate(-50%, -50%);
+}
+
+#loader:before {
+ animation: before8 2s infinite;
+}
+
+#loader:after {
+ animation: after6 2s infinite;
+}
+
+@keyframes before8 {
+ 0% {
+  width: 0.5em;
+  box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+ }
+
+ 35% {
+  width: 2.5em;
+  box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
+ }
+
+ 70% {
+  width: 0.5em;
+  box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
+ }
+
+ 100% {
+  box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+ }
+}
+
+@keyframes after6 {
+ 0% {
+  height: 0.5em;
+  box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+ }
+
+ 35% {
+  height: 2.5em;
+  box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+ }
+
+ 70% {
+  height: 0.5em;
+  box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
+ }
+
+ 100% {
+  box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+ }
+}
+
+#loader {
+ position: absolute;
+ top: calc(50% - 1.25em);
+ left: calc(50% - 1.25em);
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  #root {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 20px;
+  }
+
+  .blachk, .blachk2 {
+    width: 90%;
+    height: auto;
+  }
+
+  .blachk2 {
+    padding: 15px;
+  }
+
+  .logo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #movies {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .card .content img {
+    height: 150px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .blachk, .blachk2 {
+    width: 95%;
+  }
+
+  .blachk2 {
+    gap: 15px;
+  }
+
+  .logo h1, .logo .taretiv {
+    font-size: 20px;
+  }
+
+  .p {
+    font-size: 14px;
+  }
+
+  .card {
+    min-width: 180px;
+  }
+
+  .card .content img {
+    height: 130px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .blachk, .blachk2 {
+    width: 98%;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .blachk2 h1, .blachk2 h3 {
+    font-size: 18px;
+  }
+
+  .card {
+    min-width: 150px;
+  }
+
+  .card .content img {
+    height: 100px;
+  }
+
+  .p {
+    font-size: 13px;
+  }
+
+  #movies {
+    padding: 10px;
+    gap: 20px;
+  }
+}
+
